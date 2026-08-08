@@ -1,0 +1,6 @@
+{
+  "name": "Nepal Travel & Tourism Hub",
+  "description": "Explore iconic Nepal destinations—from Mount Everest and Annapurna Circuit to Kathmandu Durbar Square and Chitwan National Park. View live weather, interactive maps, and create custom Nepal itineraries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
