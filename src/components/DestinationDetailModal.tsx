@@ -104,7 +104,7 @@ export const DestinationDetailModal: React.FC<DestinationDetailModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/80 backdrop-blur-2xl overflow-y-auto animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-transparent/80 backdrop-blur-2xl overflow-y-auto animate-fadeIn">
       <div className="relative w-full max-w-5xl my-8 bg-slate-900/90 border border-white/15 rounded-3xl shadow-2xl overflow-hidden text-white max-h-[90vh] flex flex-col backdrop-blur-2xl">
         {/* Top Sticky Header */}
         <div className="sticky top-0 z-20 bg-white/5 border-b border-white/10 px-6 py-4 flex items-center justify-between backdrop-blur-2xl">
@@ -144,7 +144,7 @@ export const DestinationDetailModal: React.FC<DestinationDetailModalProps> = ({
           {/* Main Hero & Gallery */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-3">
-              <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden border border-white/10 bg-slate-950 shadow-inner">
+              <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden border border-white/10 bg-transparent shadow-inner">
                 <img
                   src={selectedImage}
                   alt={destination.title}

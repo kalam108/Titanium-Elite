@@ -69,7 +69,7 @@ export const AddDestinationModal: React.FC<AddDestinationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-2xl animate-fadeIn overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-transparent/80 backdrop-blur-2xl animate-fadeIn overflow-y-auto">
       <div className="relative w-full max-w-xl my-8 bg-slate-900/90 border border-white/15 rounded-3xl p-6 shadow-2xl text-white max-h-[90vh] overflow-y-auto backdrop-blur-2xl">
         <button
           onClick={onClose}

@@ -76,7 +76,7 @@ const HOTELS = [
     type: 'Lodge',
     price: 4500,
     images: [
-      'https://images.unsplash.com/photo-1518398401344-7798b3687313?auto=format&fit=crop&w=800'
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'
     ],
     amenities: ['Restaurant', 'Free Wi-Fi'],
     freeCancellation: false,
@@ -195,7 +195,7 @@ export default function HotelBookingPage() {
               <select 
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 appearance-none focus:outline-none focus:border-blue-500"
+                className="w-full bg-transparent border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 appearance-none focus:outline-none focus:border-blue-500"
               >
                 <option value="">Where are you going?</option>
                 {DESTINATIONS.map(d => <option key={d} value={d}>{d}</option>)}
@@ -211,7 +211,7 @@ export default function HotelBookingPage() {
                 type="date" 
                 value={checkIn}
                 onChange={(e) => setCheckIn(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-teal-500"
+                className="w-full bg-transparent border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-teal-500"
               />
             </div>
           </div>
@@ -225,7 +225,7 @@ export default function HotelBookingPage() {
                 value={checkOut}
                 onChange={(e) => setCheckOut(e.target.value)}
                 min={checkIn}
-                className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-teal-500"
+                className="w-full bg-transparent border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-teal-500"
               />
             </div>
           </div>
@@ -243,7 +243,7 @@ export default function HotelBookingPage() {
   const renderSearchResults = () => (
     <div className="w-full 2xl:px-12 mx-auto px-6 py-8 flex flex-col lg:flex-row gap-8">
       {/* Sidebar Filters */}
-      <div className={`lg:w-1/4 ${showMobileFilters ? 'fixed inset-0 z-50 bg-slate-950 p-6 overflow-y-auto' : 'hidden lg:block'}`}>
+      <div className={`lg:w-1/4 ${showMobileFilters ? 'fixed inset-0 z-50 bg-transparent p-6 overflow-y-auto' : 'hidden lg:block'}`}>
         <div className="flex justify-between items-center mb-6 lg:hidden">
           <h2 className="text-xl font-bold text-white">Filters</h2>
           <button onClick={() => setShowMobileFilters(false)} className="p-2 text-slate-400"><X /></button>
@@ -282,7 +282,7 @@ export default function HotelBookingPage() {
                       if (e.target.checked) setSelectedStars([...selectedStars, star]);
                       else setSelectedStars(selectedStars.filter(s => s !== star));
                     }}
-                    className="w-4 h-4 rounded text-blue-500 focus:ring-blue-500 bg-slate-950 border-slate-700"
+                    className="w-4 h-4 rounded text-blue-500 focus:ring-blue-500 bg-transparent border-slate-700"
                   />
                   <span className="flex items-center text-sm text-slate-400 group-hover:text-white transition-colors">
                     {star} <Star className="w-3.5 h-3.5 text-amber-400 ml-1 fill-amber-400" />
@@ -344,7 +344,7 @@ export default function HotelBookingPage() {
                   
                   <div className="flex flex-wrap gap-2 mt-4 mb-4">
                     {hotel.amenities.slice(0, 3).map(am => (
-                      <span key={am} className="flex items-center gap-1.5 text-xs text-slate-400 bg-slate-950 px-2.5 py-1.5 rounded-lg border border-slate-800">
+                      <span key={am} className="flex items-center gap-1.5 text-xs text-slate-400 bg-transparent px-2.5 py-1.5 rounded-lg border border-slate-800">
                         {AMENITIES_MAP[am as keyof typeof AMENITIES_MAP]} {am}
                       </span>
                     ))}
@@ -545,24 +545,24 @@ export default function HotelBookingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-2">First Name *</label>
-                    <input required type="text" className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="John" />
+                    <input required type="text" className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="John" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-2">Last Name *</label>
-                    <input required type="text" className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="Doe" />
+                    <input required type="text" className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="Doe" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-2">Email Address *</label>
-                    <input required type="email" className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="john@example.com" />
+                    <input required type="email" className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="john@example.com" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-2">Phone Number</label>
-                    <input type="tel" className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="+977 9800000000" />
+                    <input type="tel" className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" defaultValue="+977 9800000000" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-2">Special Requests (Optional)</label>
-                  <textarea rows={3} className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"></textarea>
+                  <textarea rows={3} className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"></textarea>
                 </div>
               </form>
             </section>
@@ -577,11 +577,11 @@ export default function HotelBookingPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <label className="border-2 border-blue-500 bg-blue-900/10 rounded-xl p-4 flex items-center gap-3 cursor-pointer">
-                  <input type="radio" name="payment" defaultChecked className="w-4 h-4 text-blue-600 bg-slate-950 border-slate-700 focus:ring-blue-500" />
+                  <input type="radio" name="payment" defaultChecked className="w-4 h-4 text-blue-600 bg-transparent border-slate-700 focus:ring-blue-500" />
                   <span className="font-bold text-white text-sm">Pay at Hotel</span>
                 </label>
-                <label className="border-2 border-slate-800 bg-slate-950 rounded-xl p-4 flex items-center gap-3 cursor-pointer opacity-50">
-                  <input type="radio" name="payment" disabled className="w-4 h-4 text-slate-600 bg-slate-950 border-slate-700" />
+                <label className="border-2 border-slate-800 bg-transparent rounded-xl p-4 flex items-center gap-3 cursor-pointer opacity-50">
+                  <input type="radio" name="payment" disabled className="w-4 h-4 text-slate-600 bg-transparent border-slate-700" />
                   <span className="font-bold text-white text-sm">Online Payment (Coming Soon)</span>
                 </label>
               </div>
@@ -682,7 +682,7 @@ export default function HotelBookingPage() {
             <h3 className="font-bold text-white text-lg">{bookingDetails.hotel.name}</h3>
             <p className="text-sm text-slate-400">{bookingDetails.room.name} — {bookingDetails.guests} Guests</p>
             
-            <div className="grid grid-cols-2 gap-4 mt-6 p-4 bg-slate-950 rounded-2xl border border-slate-800">
+            <div className="grid grid-cols-2 gap-4 mt-6 p-4 bg-transparent rounded-2xl border border-slate-800">
               <div>
                 <span className="block text-xs text-slate-500 mb-1">Check-in</span>
                 <span className="font-bold text-white text-sm">{bookingDetails.checkIn}</span>
@@ -714,7 +714,7 @@ export default function HotelBookingPage() {
 
   // --- RENDER ---
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans selection:bg-blue-500/30">
       
       {/* Main Content routing */}
       <AnimatePresence mode="wait">
@@ -739,7 +739,7 @@ export default function HotelBookingPage() {
 
       {/* Footer CTA (hidden on confirmation) */}
       {currentView !== 'confirmation' && (
-        <footer className="border-t border-slate-800 bg-slate-950 py-16 mt-8">
+        <footer className="border-t border-slate-800 bg-transparent py-16 mt-8">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold text-white mb-2">Your Nepal Adventure Starts With the Right Stay.</h2>
             <p className="text-slate-400 mb-8">Find a comfortable place to stay and get closer to the experiences you've been dreaming about.</p>

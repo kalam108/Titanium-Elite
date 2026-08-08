@@ -140,7 +140,7 @@ const PostCard = ({ post, onInteraction }: { post: any, onInteraction: (id: numb
       </div>
 
       {/* Post Content */}
-      <div className="relative group bg-slate-950 flex items-center justify-center overflow-hidden max-h-[600px]">
+      <div className="relative group bg-transparent flex items-center justify-center overflow-hidden max-h-[600px]">
         {post.mediaType === 'carousel' ? (
           <>
             <img src={post.media[currentImageIdx]} alt="Post media" className="w-full object-contain max-h-[600px]" />
@@ -226,7 +226,7 @@ const PostCard = ({ post, onInteraction }: { post: any, onInteraction: (id: numb
                 placeholder="Share your thoughts..." 
                 value={commentText}
                 onChange={(e) => setCommentText(e.target.value)}
-                className="flex-1 bg-slate-950 border border-slate-800 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-slate-600 transition-colors"
+                className="flex-1 bg-transparent border border-slate-800 rounded-full px-4 py-2 text-sm text-white focus:outline-none focus:border-slate-600 transition-colors"
               />
               <button 
                 disabled={!commentText.trim()} 
@@ -248,7 +248,7 @@ const CreatePostModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => 
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-sm" onClick={onClose}></div>
+      <div className="absolute inset-0 bg-transparent/80 backdrop-blur-sm" onClick={onClose}></div>
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -282,7 +282,7 @@ const CreatePostModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => 
               <label className="block text-sm font-medium text-slate-400 mb-1">Caption</label>
               <textarea 
                 rows={4} 
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                className="w-full bg-transparent border border-slate-800 rounded-xl p-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
                 placeholder="Tell the community about your experience..."
               ></textarea>
             </div>
@@ -291,12 +291,12 @@ const CreatePostModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => 
                 <label className="block text-sm font-medium text-slate-400 mb-1">Destination Tag</label>
                 <div className="relative">
                   <MapPin className="absolute left-3 top-3 w-4 h-4 text-slate-500" />
-                  <input type="text" placeholder="e.g. Pokhara, Nepal" className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500" />
+                  <input type="text" placeholder="e.g. Pokhara, Nepal" className="w-full bg-transparent border border-slate-800 rounded-xl pl-9 pr-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500" />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-slate-400 mb-1">Category</label>
-                <select className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 appearance-none">
+                <select className="w-full bg-transparent border border-slate-800 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 appearance-none">
                   <option>Travel Story</option>
                   <option>Travel Tip</option>
                   <option>Adventure</option>
@@ -307,7 +307,7 @@ const CreatePostModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => 
           </div>
         </div>
 
-        <div className="p-4 border-t border-slate-800 flex justify-between items-center bg-slate-950">
+        <div className="p-4 border-t border-slate-800 flex justify-between items-center bg-transparent">
           <button className="flex items-center gap-2 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors bg-indigo-500/10 px-3 py-1.5 rounded-lg">
             <Sparkles className="w-4 h-4" /> AI Assist
           </button>
@@ -342,7 +342,7 @@ export default function CommunityPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans selection:bg-blue-500/30">
       
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 px-4 sm:px-6 overflow-hidden flex flex-col items-center justify-center text-center min-h-[400px]">
@@ -409,7 +409,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Content Filters - Sticky on Mobile */}
-      <div className="sticky top-16 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+      <div className="sticky top-16 z-40 bg-transparent/90 backdrop-blur-md border-b border-slate-800">
         <div className="w-full 2xl:px-12 mx-auto px-4 sm:px-6 py-3 overflow-x-auto custom-scrollbar flex items-center gap-2">
           {FILTERS.map(filter => (
             <button
@@ -516,7 +516,7 @@ export default function CommunityPage() {
       </main>
 
       {/* Footer CTA */}
-      <footer className="border-t border-slate-800 bg-slate-950 py-16 mt-8">
+      <footer className="border-t border-slate-800 bg-transparent py-16 mt-8">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-2">Your Nepal Story Could Inspire Someone.</h2>
           <p className="text-slate-400 mb-8">Share your journey, discover new places, and connect with travelers from around the world.</p>

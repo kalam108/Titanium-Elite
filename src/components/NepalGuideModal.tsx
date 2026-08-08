@@ -16,7 +16,7 @@ export const NepalGuideModal: React.FC<NepalGuideModalProps> = ({ isOpen, onClos
   const nprRate = 135.5; // Approx current rate 1 USD = 135.5 NPR
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-2xl overflow-y-auto animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-transparent/80 backdrop-blur-2xl overflow-y-auto animate-fadeIn">
       <div className="relative w-full max-w-3xl my-8 bg-slate-900/90 border border-white/15 rounded-3xl p-6 shadow-2xl text-white backdrop-blur-2xl max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
@@ -152,7 +152,7 @@ export const NepalGuideModal: React.FC<NepalGuideModalProps> = ({ isOpen, onClos
                       min={1}
                       value={usdAmount}
                       onChange={(e) => setUsdAmount(Number(e.target.value) || 0)}
-                      className="w-full bg-slate-950 border border-white/15 rounded-xl px-4 py-2.5 text-lg font-bold text-white focus:outline-none focus:border-blue-400"
+                      className="w-full bg-transparent border border-white/15 rounded-xl px-4 py-2.5 text-lg font-bold text-white focus:outline-none focus:border-blue-400"
                     />
                   </div>
                   <div>

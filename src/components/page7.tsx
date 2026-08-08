@@ -191,7 +191,7 @@ export default function SupportPage() {
         <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {FAQS.map((faq, i) => (
-            <details key={i} className="group bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden">
+            <details key={i} className="group bg-transparent border border-slate-800 rounded-2xl overflow-hidden">
               <summary className="font-bold text-white p-4 cursor-pointer flex items-center justify-between hover:bg-slate-900 transition-colors">
                 {faq.q}
                 <ChevronRight className="w-5 h-5 text-slate-500 group-open:rotate-90 transition-transform" />
@@ -223,7 +223,7 @@ export default function SupportPage() {
               <select 
                 value={ticketCategory}
                 onChange={(e) => setTicketCategory(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500"
               >
                 <option>Hotel & Booking</option>
                 <option>Destination</option>
@@ -240,7 +240,7 @@ export default function SupportPage() {
               <select 
                 value={ticketPriority}
                 onChange={(e) => setTicketPriority(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500"
               >
                 <option value="Low">Low (General Query/Feedback)</option>
                 <option value="Medium">Medium (Affects normal use)</option>
@@ -257,7 +257,7 @@ export default function SupportPage() {
               value={ticketSubject}
               onChange={(e) => setTicketSubject(e.target.value)}
               placeholder="Briefly describe your issue..."
-              className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" 
+              className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500" 
             />
           </div>
 
@@ -269,13 +269,13 @@ export default function SupportPage() {
               value={ticketDesc}
               onChange={(e) => setTicketDesc(e.target.value)}
               placeholder="Tell us what happened..."
-              className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"
+              className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"
             ></textarea>
           </div>
 
           <div>
             <label className="block text-sm font-bold text-slate-300 mb-2">Attachments (Optional)</label>
-            <div className="border-2 border-dashed border-slate-700 hover:border-slate-500 transition-colors bg-slate-950 rounded-xl p-6 text-center cursor-pointer" onClick={() => fileInputRef.current?.click()}>
+            <div className="border-2 border-dashed border-slate-700 hover:border-slate-500 transition-colors bg-transparent rounded-xl p-6 text-center cursor-pointer" onClick={() => fileInputRef.current?.click()}>
               <input type="file" ref={fileInputRef} className="hidden" multiple accept="image/*,.pdf" />
               <Paperclip className="w-6 h-6 text-slate-500 mx-auto mb-2" />
               <p className="text-sm font-bold text-slate-300">Click to upload screenshots or receipts</p>
@@ -331,7 +331,7 @@ export default function SupportPage() {
               <p className="text-sm text-slate-400">{ticket.category} • Updated {ticket.date}</p>
             </div>
             
-            <button className="hidden sm:flex px-4 py-2 bg-slate-950 border border-slate-800 group-hover:bg-blue-600 group-hover:border-blue-500 text-white text-sm font-bold rounded-xl transition-colors items-center gap-2">
+            <button className="hidden sm:flex px-4 py-2 bg-transparent border border-slate-800 group-hover:bg-blue-600 group-hover:border-blue-500 text-white text-sm font-bold rounded-xl transition-colors items-center gap-2">
               View Request <ChevronRight className="w-4 h-4" />
             </button>
           </div>
@@ -369,7 +369,7 @@ export default function SupportPage() {
         </div>
 
         {/* Chat Thread */}
-        <div className="bg-slate-950 border border-slate-800 p-6 space-y-6 max-h-[500px] overflow-y-auto">
+        <div className="bg-transparent border border-slate-800 p-6 space-y-6 max-h-[500px] overflow-y-auto">
           {selectedTicket.messages.map((msg: any, i: number) => {
             const isUser = msg.sender === 'You';
             return (
@@ -390,7 +390,7 @@ export default function SupportPage() {
         {/* Reply Area */}
         <div className="bg-slate-900 border border-slate-800 rounded-b-3xl p-6 shadow-xl">
           {selectedTicket.status === 'Resolved' ? (
-            <div className="text-center p-4 bg-slate-950 border border-slate-800 rounded-xl">
+            <div className="text-center p-4 bg-transparent border border-slate-800 rounded-xl">
               <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
               <p className="text-emerald-400 font-bold">This request is marked as resolved.</p>
               <p className="text-sm text-slate-400 mt-1">If you need further assistance, please open a new request.</p>
@@ -403,7 +403,7 @@ export default function SupportPage() {
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
                   placeholder="Write your reply..."
-                  className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none pr-12"
+                  className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none pr-12"
                 ></textarea>
                 <button className="absolute right-3 top-3 p-2 text-slate-500 hover:text-white transition-colors" title="Attach file">
                   <Paperclip className="w-5 h-5" />
@@ -431,7 +431,7 @@ export default function SupportPage() {
 
       <div className="flex justify-center gap-4 mb-8">
         {[1,2,3,4,5].map(rating => (
-          <button key={rating} className="w-12 h-12 rounded-full border border-slate-700 bg-slate-950 hover:bg-slate-800 hover:border-yellow-500 flex items-center justify-center group transition-colors">
+          <button key={rating} className="w-12 h-12 rounded-full border border-slate-700 bg-transparent hover:bg-slate-800 hover:border-yellow-500 flex items-center justify-center group transition-colors">
             <Star className="w-6 h-6 text-slate-500 group-hover:text-yellow-400 transition-colors" />
           </button>
         ))}
@@ -440,11 +440,11 @@ export default function SupportPage() {
       <div className="text-left space-y-4 mb-8">
         <div>
           <label className="block text-sm font-bold text-slate-300 mb-2">What did you like?</label>
-          <textarea rows={2} className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"></textarea>
+          <textarea rows={2} className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"></textarea>
         </div>
         <div>
           <label className="block text-sm font-bold text-slate-300 mb-2">What could we improve?</label>
-          <textarea rows={2} className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"></textarea>
+          <textarea rows={2} className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"></textarea>
         </div>
       </div>
 
@@ -455,7 +455,7 @@ export default function SupportPage() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30 pb-20">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans selection:bg-blue-500/30 pb-20">
       
       {/* Dynamic Hero */}
       {activeView !== 'ticket' && activeView !== 'submit' && (
@@ -471,7 +471,7 @@ export default function SupportPage() {
                 placeholder="Search help topics..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-700 hover:border-slate-500 text-white rounded-2xl pl-14 pr-4 py-4 text-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all shadow-xl"
+                className="w-full bg-transparent border border-slate-700 hover:border-slate-500 text-white rounded-2xl pl-14 pr-4 py-4 text-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all shadow-xl"
               />
             </div>
             
@@ -524,7 +524,7 @@ export default function SupportPage() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-transparent/90 backdrop-blur-sm"
               onClick={() => setShowSuccessModal(false)}
             />
             
@@ -538,7 +538,7 @@ export default function SupportPage() {
               <h2 className="text-2xl font-black text-white mb-2">Request Submitted</h2>
               <p className="text-slate-400 mb-6">Your request has been successfully submitted to the Explore Nepal support team.</p>
               
-              <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 mb-8 text-left">
+              <div className="bg-transparent border border-slate-800 rounded-xl p-4 mb-8 text-left">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs text-slate-500 uppercase font-bold">Ticket ID</span>
                   <span className="text-sm font-black text-blue-400">ENP-REQ-2026-001246</span>
@@ -568,7 +568,7 @@ export default function SupportPage() {
       </AnimatePresence>
 
       {/* Footer CTA */}
-      <footer className="border-t border-slate-800 bg-slate-950 py-16 mt-8">
+      <footer className="border-t border-slate-800 bg-transparent py-16 mt-8">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-2">Your Feedback Helps Us Improve Nepal Travel.</h2>
           <p className="text-slate-400 mb-8">Every question, report, and suggestion helps us make Explore Nepal better for travelers and local communities.</p>

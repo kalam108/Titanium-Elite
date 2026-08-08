@@ -218,7 +218,7 @@ export default function TranslationPage() {
   );
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30 pb-20">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans selection:bg-blue-500/30 pb-20">
       
 
 
@@ -283,7 +283,7 @@ export default function TranslationPage() {
             {/* Translation Areas */}
             <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-800">
               {/* Source Area */}
-              <div className="relative flex flex-col bg-slate-950/50">
+              <div className="relative flex flex-col bg-transparent/50">
                 <textarea 
                   ref={sourceInputRef}
                   value={sourceText}
@@ -401,7 +401,7 @@ export default function TranslationPage() {
               </div>
             </div>
             
-            <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 h-64 overflow-y-auto flex flex-col justify-end">
+            <div className="bg-transparent border border-slate-800 rounded-2xl p-4 h-64 overflow-y-auto flex flex-col justify-end">
               <p className="text-slate-500 text-sm">Tap a microphone to begin conversing.</p>
             </div>
           </motion.div>
@@ -462,7 +462,7 @@ export default function TranslationPage() {
                     <button 
                       key={cat}
                       onClick={() => setActivePhraseCategory(cat)}
-                      className={`px-4 py-2 rounded-full text-xs font-bold transition-colors border ${activePhraseCategory === cat ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-white'}`}
+                      className={`px-4 py-2 rounded-full text-xs font-bold transition-colors border ${activePhraseCategory === cat ? 'bg-blue-600 border-blue-500 text-white' : 'bg-transparent border-slate-800 text-slate-400 hover:border-slate-600 hover:text-white'}`}
                     >
                       {cat}
                     </button>
@@ -470,7 +470,7 @@ export default function TranslationPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {QUICK_PHRASES[activePhraseCategory as keyof typeof QUICK_PHRASES].map((phrase, i) => (
-                    <div key={i} className="bg-slate-950 border border-slate-800 p-4 rounded-xl flex items-center justify-between group hover:border-blue-500/50 transition-colors">
+                    <div key={i} className="bg-transparent border border-slate-800 p-4 rounded-xl flex items-center justify-between group hover:border-blue-500/50 transition-colors">
                       <div>
                         <p className="font-bold text-white mb-1">{phrase.en}</p>
                         <p className="text-sm text-slate-400">{phrase.ne}</p>
@@ -489,7 +489,7 @@ export default function TranslationPage() {
             {activeHistoryTab === 'history' && (
               <div className="space-y-4">
                 {history.length > 0 ? history.map(item => (
-                  <div key={item.id} className="bg-slate-950 border border-slate-800 p-4 rounded-xl">
+                  <div key={item.id} className="bg-transparent border border-slate-800 p-4 rounded-xl">
                     <div className="flex justify-between items-center mb-2">
                       <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
                         <span>{item.sourceLang}</span>
@@ -513,7 +513,7 @@ export default function TranslationPage() {
             {activeHistoryTab === 'saved' && (
               <div className="space-y-4">
                 {saved.length > 0 ? saved.map(item => (
-                  <div key={item.id} className="bg-slate-950 border border-slate-800 p-4 rounded-xl flex items-center justify-between">
+                  <div key={item.id} className="bg-transparent border border-slate-800 p-4 rounded-xl flex items-center justify-between">
                     <div>
                       <p className="font-bold text-white mb-1">{item.source}</p>
                       <p className="text-sm text-slate-400">{item.target}</p>

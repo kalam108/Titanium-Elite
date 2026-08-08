@@ -255,7 +255,7 @@ export default function SmartBudgetCalculator() {
   const budgetColor = totalBudget < 30000 ? 'text-green-400' : totalBudget <= 75000 ? 'text-blue-400' : totalBudget <= 150000 ? 'text-purple-400' : 'text-amber-400';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans">
 
 
       {/* Hero Section */}
@@ -297,7 +297,7 @@ export default function SmartBudgetCalculator() {
                     <select 
                       value={destination} 
                       onChange={(e) => setDestination(e.target.value)}
-                      className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                      className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                     >
                       {DESTINATIONS.map(d => <option key={d} value={d}>{d}</option>)}
                     </select>
@@ -308,7 +308,7 @@ export default function SmartBudgetCalculator() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-2">Travelers</label>
-                    <div className="flex items-center bg-slate-950 border border-slate-700 rounded-xl overflow-hidden">
+                    <div className="flex items-center bg-transparent border border-slate-700 rounded-xl overflow-hidden">
                       <button onClick={() => setTravelers(Math.max(1, travelers - 1))} className="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">-</button>
                       <input type="number" min="1" value={travelers} onChange={(e) => setTravelers(Math.max(1, parseInt(e.target.value) || 1))} className="w-full bg-transparent text-center text-white font-semibold focus:outline-none" />
                       <button onClick={() => setTravelers(travelers + 1)} className="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">+</button>
@@ -316,7 +316,7 @@ export default function SmartBudgetCalculator() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-2">Days <span className="text-xs text-slate-500 font-normal">({nights} Nights)</span></label>
-                    <div className="flex items-center bg-slate-950 border border-slate-700 rounded-xl overflow-hidden">
+                    <div className="flex items-center bg-transparent border border-slate-700 rounded-xl overflow-hidden">
                       <button onClick={() => setDays(Math.max(1, days - 1))} className="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">-</button>
                       <input type="number" min="1" value={days} onChange={(e) => setDays(Math.max(1, parseInt(e.target.value) || 1))} className="w-full bg-transparent text-center text-white font-semibold focus:outline-none" />
                       <button onClick={() => setDays(days + 1)} className="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">+</button>
@@ -335,7 +335,7 @@ export default function SmartBudgetCalculator() {
                       className={`py-3 px-2 rounded-xl text-sm font-bold border transition-all ${
                         travelStyle === style 
                           ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-900/20' 
-                          : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200'
+                          : 'bg-transparent border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200'
                       }`}
                     >
                       {style}
@@ -365,7 +365,7 @@ export default function SmartBudgetCalculator() {
                     <select 
                       value={accType} 
                       onChange={(e) => { setAccType(e.target.value as AccommodationType); setCustomAccRate(null); }}
-                      className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-indigo-500 transition-colors"
+                      className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-indigo-500 transition-colors"
                     >
                       {Object.keys(ACCOMMODATION_BASE_RATES).map(type => (
                         <option key={type} value={type}>{type}</option>
@@ -377,7 +377,7 @@ export default function SmartBudgetCalculator() {
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-2">Rooms</label>
-                  <div className="flex items-center bg-slate-950 border border-slate-700 rounded-xl overflow-hidden">
+                  <div className="flex items-center bg-transparent border border-slate-700 rounded-xl overflow-hidden">
                     <button onClick={() => setRooms(Math.max(1, rooms - 1))} className="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">-</button>
                     <input type="number" min="1" value={rooms} onChange={(e) => setRooms(Math.max(1, parseInt(e.target.value) || 1))} className="w-full bg-transparent text-center text-white font-semibold focus:outline-none" />
                     <button onClick={() => setRooms(rooms + 1)} className="px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">+</button>
@@ -394,7 +394,7 @@ export default function SmartBudgetCalculator() {
                   type="number" 
                   value={accRate}
                   onChange={(e) => setCustomAccRate(parseInt(e.target.value) || 0)}
-                  className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 transition-colors"
+                  className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 transition-colors"
                 />
               </div>
             </section>
@@ -421,7 +421,7 @@ export default function SmartBudgetCalculator() {
                     className={`py-4 px-3 rounded-xl text-sm font-bold border transition-all flex flex-col items-center gap-2 ${
                       foodType === type 
                         ? 'bg-orange-600 border-orange-500 text-white shadow-lg shadow-orange-900/20' 
-                        : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200'
+                        : 'bg-transparent border-slate-800 text-slate-400 hover:border-slate-600 hover:text-slate-200'
                     }`}
                   >
                     <span>{type}</span>
@@ -449,7 +449,7 @@ export default function SmartBudgetCalculator() {
                 <div className="relative">
                   <select 
                     onChange={addTransport}
-                    className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-teal-500 transition-colors"
+                    className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-teal-500 transition-colors"
                   >
                     <option value="">-- Select Transport Option --</option>
                     {TRANSPORT_OPTIONS.map(t => (
@@ -463,7 +463,7 @@ export default function SmartBudgetCalculator() {
               {selectedTransports.length > 0 && (
                 <div className="space-y-2 mt-4">
                   {selectedTransports.map((t, idx) => (
-                    <div key={idx} className="flex items-center justify-between bg-slate-950 border border-slate-800 rounded-xl p-3">
+                    <div key={idx} className="flex items-center justify-between bg-transparent border border-slate-800 rounded-xl p-3">
                       <div className="flex items-center gap-3">
                         <span className="w-6 h-6 rounded bg-slate-800 flex items-center justify-center text-xs font-bold">{t.qty}x</span>
                         <span className="text-sm font-medium text-slate-300">{t.name}</span>
@@ -498,7 +498,7 @@ export default function SmartBudgetCalculator() {
                     <label 
                       key={activity.name} 
                       className={`flex items-center justify-between p-4 rounded-xl border cursor-pointer transition-all ${
-                        isSelected ? 'bg-pink-500/10 border-pink-500/50' : 'bg-slate-950 border-slate-800 hover:border-slate-700'
+                        isSelected ? 'bg-pink-500/10 border-pink-500/50' : 'bg-transparent border-slate-800 hover:border-slate-700'
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -538,7 +538,7 @@ export default function SmartBudgetCalculator() {
                     <select 
                       value={guideType} 
                       onChange={(e) => setGuideType(e.target.value)}
-                      className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-yellow-500 transition-colors"
+                      className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-yellow-500 transition-colors"
                     >
                       {GUIDE_OPTIONS.map(g => (
                         <option key={g.name} value={g.name}>{g.name} ({formatCurrency(g.price)}/day)</option>
@@ -554,7 +554,7 @@ export default function SmartBudgetCalculator() {
                     <select 
                       value={porterType} 
                       onChange={(e) => setPorterType(e.target.value)}
-                      className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-yellow-500 transition-colors"
+                      className="w-full bg-transparent border border-slate-700 text-white rounded-xl px-4 py-3 appearance-none focus:outline-none focus:border-yellow-500 transition-colors"
                     >
                       {PORTER_OPTIONS.map(p => (
                         <option key={p.name} value={p.name}>{p.name} ({formatCurrency(p.price)}/day)</option>
@@ -574,7 +574,7 @@ export default function SmartBudgetCalculator() {
                     <div className="p-2.5 bg-emerald-500/20 rounded-xl"><ShieldCheck className="w-5 h-5 text-emerald-400" /></div>
                     <h2 className="text-xl font-bold text-white">Insurance</h2>
                   </div>
-                  <label className="flex items-start gap-3 p-4 rounded-xl border bg-slate-950 border-slate-800 cursor-pointer hover:border-emerald-500/50 transition-colors">
+                  <label className="flex items-start gap-3 p-4 rounded-xl border bg-transparent border-slate-800 cursor-pointer hover:border-emerald-500/50 transition-colors">
                     <input 
                       type="checkbox" 
                       checked={includeInsurance}
@@ -602,7 +602,7 @@ export default function SmartBudgetCalculator() {
                       value={miscExpense || ''}
                       onChange={(e) => setMiscExpense(parseInt(e.target.value) || 0)}
                       placeholder="0"
-                      className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl pl-14 pr-4 py-3 focus:outline-none focus:border-slate-500 transition-colors"
+                      className="w-full bg-transparent border border-slate-700 text-white rounded-xl pl-14 pr-4 py-3 focus:outline-none focus:border-slate-500 transition-colors"
                     />
                   </div>
                 </div>
@@ -626,18 +626,18 @@ export default function SmartBudgetCalculator() {
                     {formatCurrency(totalBudget).replace('NPR ', '')}
                     <span className="text-xl text-slate-500 font-bold">NPR</span>
                   </span>
-                  <div className={`mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-slate-950 border border-slate-800 ${budgetColor}`}>
+                  <div className={`mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-transparent border border-slate-800 ${budgetColor}`}>
                     <div className="w-2 h-2 rounded-full bg-current animate-pulse"></div>
                     {budgetLevel}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-slate-950 rounded-xl p-3 border border-slate-800">
+                  <div className="bg-transparent rounded-xl p-3 border border-slate-800">
                     <span className="block text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1">Per Person</span>
                     <span className="text-lg font-bold text-white">{formatCurrency(costPerPerson)}</span>
                   </div>
-                  <div className="bg-slate-950 rounded-xl p-3 border border-slate-800">
+                  <div className="bg-transparent rounded-xl p-3 border border-slate-800">
                     <span className="block text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1">Per Day (Avg)</span>
                     <span className="text-lg font-bold text-white">{formatCurrency(dailyCost)}</span>
                   </div>
@@ -748,7 +748,7 @@ export default function SmartBudgetCalculator() {
       </main>
       
       {/* Footer CTA */}
-      <footer className="border-t border-white/10 bg-slate-950 py-16 mt-12">
+      <footer className="border-t border-white/10 bg-transparent py-16 mt-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">Ready to Explore Nepal?</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

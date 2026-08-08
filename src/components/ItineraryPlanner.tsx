@@ -296,7 +296,7 @@ export const ItineraryPlanner: React.FC<ItineraryPlannerProps> = ({
 
       {/* New Trip Modal */}
       {showNewModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-transparent/80 backdrop-blur-2xl">
           <div className="relative w-full max-w-md bg-slate-900/90 border border-white/15 rounded-3xl p-6 shadow-2xl text-white backdrop-blur-2xl">
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-blue-400" />

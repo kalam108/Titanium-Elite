@@ -144,7 +144,7 @@ export default function HealthcareEmergencyPage() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-red-500/30 pb-20">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans selection:bg-red-500/30 pb-20">
       
       {/* Global Header */}
 
@@ -216,10 +216,10 @@ export default function HealthcareEmergencyPage() {
                   placeholder="Search Kathmandu, Pokhara, etc..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-slate-950 border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-blue-500"
+                  className="w-full bg-transparent border border-slate-700 text-white rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-blue-500"
                 />
               </div>
-              <div className="flex bg-slate-950 border border-slate-700 rounded-xl p-1 overflow-x-auto no-scrollbar">
+              <div className="flex bg-transparent border border-slate-700 rounded-xl p-1 overflow-x-auto no-scrollbar">
                 {['All', 'Hospital', 'Clinic', 'Pharmacy'].map(cat => (
                   <button
                     key={cat}
@@ -296,7 +296,7 @@ export default function HealthcareEmergencyPage() {
             </h2>
             <div className="space-y-4">
               {EMERGENCY_CONTACTS.map(contact => (
-                <div key={contact.id} className="p-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center justify-between group">
+                <div key={contact.id} className="p-4 bg-transparent border border-slate-800 rounded-2xl flex items-center justify-between group">
                   <div>
                     <h4 className="font-bold text-white text-sm">{contact.name}</h4>
                     <p className="text-xs text-slate-400 flex items-center gap-1 mt-1">
@@ -327,7 +327,7 @@ export default function HealthcareEmergencyPage() {
             <div className="space-y-4">
               {FIRST_AID_TOPICS.map((topic, i) => (
                 <div key={i} className="flex gap-4 items-start">
-                  <div className="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-transparent border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <topic.icon className="w-5 h-5 text-blue-400" />
                   </div>
                   <div>
@@ -337,7 +337,7 @@ export default function HealthcareEmergencyPage() {
                 </div>
               ))}
             </div>
-            <button className="w-full mt-6 py-3 bg-slate-950 border border-slate-800 hover:border-slate-600 text-white text-sm font-bold rounded-xl transition-colors">
+            <button className="w-full mt-6 py-3 bg-transparent border border-slate-800 hover:border-slate-600 text-white text-sm font-bold rounded-xl transition-colors">
               View All Safety Guides
             </button>
           </div>
@@ -366,7 +366,7 @@ export default function HealthcareEmergencyPage() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <motion.div 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-transparent/90 backdrop-blur-sm"
               onClick={() => setShowEmergencyModal(false)}
             />
             
@@ -390,22 +390,22 @@ export default function HealthcareEmergencyPage() {
               <div className="p-6 space-y-3">
                 <p className="text-center text-slate-300 font-medium mb-6">What do you need?</p>
 
-                <button onClick={() => initiateCall(EMERGENCY_CONTACTS[1])} className="w-full py-4 bg-slate-950 hover:bg-red-900/30 border border-slate-800 hover:border-red-500/50 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
+                <button onClick={() => initiateCall(EMERGENCY_CONTACTS[1])} className="w-full py-4 bg-transparent hover:bg-red-900/30 border border-slate-800 hover:border-red-500/50 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
                   <span className="flex items-center gap-3"><ShieldAlert className="w-5 h-5 text-red-500 group-hover:animate-pulse" /> Call Official Police</span>
                   <ChevronRight className="w-5 h-5 text-slate-500" />
                 </button>
 
-                <button onClick={() => initiateCall(EMERGENCY_CONTACTS[2])} className="w-full py-4 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
+                <button onClick={() => initiateCall(EMERGENCY_CONTACTS[2])} className="w-full py-4 bg-transparent hover:bg-slate-800 border border-slate-800 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
                   <span className="flex items-center gap-3"><Ambulance className="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform" /> Find Ambulance</span>
                   <ChevronRight className="w-5 h-5 text-slate-500" />
                 </button>
 
-                <button onClick={() => { setShowEmergencyModal(false); document.getElementById('search')?.focus(); }} className="w-full py-4 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
+                <button onClick={() => { setShowEmergencyModal(false); document.getElementById('search')?.focus(); }} className="w-full py-4 bg-transparent hover:bg-slate-800 border border-slate-800 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
                   <span className="flex items-center gap-3"><Hospital className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" /> Find Nearest Hospital</span>
                   <ChevronRight className="w-5 h-5 text-slate-500" />
                 </button>
 
-                <button onClick={handleLocationShare} className="w-full py-4 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
+                <button onClick={handleLocationShare} className="w-full py-4 bg-transparent hover:bg-slate-800 border border-slate-800 text-white font-bold rounded-xl flex items-center justify-between px-6 transition-colors group">
                   <span className="flex items-center gap-3"><Share2 className="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform" /> Share My Location</span>
                   <ChevronRight className="w-5 h-5 text-slate-500" />
                 </button>
@@ -428,7 +428,7 @@ export default function HealthcareEmergencyPage() {
           <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
             <motion.div 
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-transparent/90 backdrop-blur-sm"
               onClick={() => setActiveCallContact(null)}
             />
             

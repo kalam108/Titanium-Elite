@@ -35,7 +35,7 @@ export const MapView: React.FC<MapViewProps> = ({
   const activeDest = destinations.find((d) => d.id === activeMarkerId) || selectedDestination;
 
   return (
-    <div className="relative w-full h-[calc(100vh-4rem)] bg-slate-950 flex flex-col md:flex-row overflow-hidden">
+    <div className="relative w-full h-[calc(100vh-4rem)] bg-transparent flex flex-col md:flex-row overflow-hidden">
       {/* Sidebar List */}
       <div className="w-full md:w-80 lg:w-96 bg-slate-900/60 backdrop-blur-2xl border-r border-white/10 flex flex-col h-full z-10 shadow-2xl">
         <div className="p-4 border-b border-white/10 bg-white/5 flex items-center justify-between">
@@ -165,7 +165,7 @@ export const MapView: React.FC<MapViewProps> = ({
           </APIProvider>
         ) : (
           /* Fallback Map Interface with High-Res World Canvas & Interactive Spot Markers */
-          <div className="relative w-full h-full bg-slate-950 flex flex-col items-center justify-center p-6 text-slate-200 overflow-hidden">
+          <div className="relative w-full h-full bg-transparent flex flex-col items-center justify-center p-6 text-slate-200 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
 
             {/* Simulated World Map Canvas with Interactive Pin Points */}

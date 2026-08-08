@@ -4,7 +4,7 @@ import { Map, MapPin, Clock, Route, Car, Info } from 'lucide-react';
 
 export default function Page1() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans p-6">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans p-6">
       {/* Header Section */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}

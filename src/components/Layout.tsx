@@ -12,9 +12,9 @@ export default function Layout() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-blue-500/30">
+    <div className="min-h-screen bg-transparent text-slate-200 font-sans selection:bg-blue-500/30">
       {/* Global Header */}
-      <header className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+      <header className="sticky top-0 z-50 glass-panel border-b-0">
         <div className="w-full 2xl:px-12 mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           
           <div className="flex items-center gap-2">
